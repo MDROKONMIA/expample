@@ -1,0 +1,41 @@
+.Query{
+    &-SearchBar{
+        @apply  rounded-lg overflow-hidden border-2 flex; 
+        width: 500px;
+        
+        &-logo{
+            @apply relative items-center w-8 p-2;
+        }
+        &-inputmain{
+            @apply w-full h-10 overflow-hidden;
+            border-radius:  inherit;
+            &:focus{
+                @apply outline-none;
+            }
+            
+        }
+    }
+}
+
+.MenuItems{
+    @apply font-extrabold text-gray-600 text-lg;
+    margin: 0 1rem;
+    &-active{
+        @apply text-blue-400 border-b-4 border-black;
+    }
+    &:hover{ 
+        transition-delay: 2s;
+        transition: all 0.2s;
+         
+    }
+}
+.Contact-Numbers{
+    @apply grid grid-cols-2 pl-4 pr-4;
+    .contact-number{
+        @apply flex items-center;
+        &:nth-child(2n){
+            @apply pl-2;
+        }
+    }
+}
+ 
