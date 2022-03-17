@@ -1,5 +1,6 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; 
 
-@import '../scss/SearchBar';
+@import '../scss/Utility';
+@import '../scss/Navbar';

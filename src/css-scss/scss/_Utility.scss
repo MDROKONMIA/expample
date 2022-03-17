@@ -1,0 +1,7 @@
+.img-fluid{
+    @apply w-4/5;
+}
+.logo{
+    @apply absolute top-1/2;
+    transform: translateY(-70%);
+}

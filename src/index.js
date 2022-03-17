@@ -1,8 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom'; 
-import "./css-scss/css/main.css";
+import  './css-scss/css/main.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals'; 
+import './css-scss/css/bootstrap.css';
+// Put any other imports below so that CSS from your
+// components takes precedence over default styles.
 
 ReactDOM.render(
   <React.StrictMode>
