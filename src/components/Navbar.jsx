@@ -84,7 +84,7 @@ export default function Navbar() {
                                 {NavItem.map((el,index) => {
                                     return (
                                         <>
-                                        <li onMouseEnter={} className='Menulist'><span>{el.title}</span><span>{el.submenu && <fa.FaAngleDown size={"1.2rem"} />}</span></li>
+                                            <li key={index} onMouseEnter={HanldeDropdown(index)} className='Menulist'><span>{el.title}</span><span>{el.submenu && <fa.FaAngleDown size={"1.2rem"} />}</span></li>
                                             {el.submenu && <div className='text-white'>
                                                 {el.submenu.map((submenuItems, index) => {
                                                     return (
