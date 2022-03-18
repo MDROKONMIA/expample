@@ -6,6 +6,8 @@ import reportWebVitals from './reportWebVitals';
 import './css-scss/css/bootstrap.css';
 // Put any other imports below so that CSS from your
 // components takes precedence over default styles.
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 ReactDOM.render(
   <React.StrictMode>

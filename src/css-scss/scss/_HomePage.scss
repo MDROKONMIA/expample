@@ -1,0 +1,150 @@
+@keyframes zoomin {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(.3, .3, .3);
+    }
+}
+
+@keyframes fadin {
+
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate3d(0, -100px, 0)
+    }
+}
+
+.slider-content-header {
+    animation: fadin 1s;
+    animation-fill-mode: both;
+    @apply mb-3;
+    font-style: italic;
+
+    &:last-child {
+        @apply mb-0;
+    }
+
+    &>* {
+        animation-name: zoomin 1s;
+        animation-delay: 3s;
+        animation-fill-mode: both;
+    }
+}
+
+.animationZoomIn {
+    animation: zoomin 1s;
+    animation-fill-mode: both;
+
+    &>* {
+        animation: fadin 1s;
+        animation-fill-mode: both;
+        animation-delay: 3s;
+    }
+}
+
+.our_products {
+
+    &_card {
+        @apply border-2 h-64 overflow-hidden rounded-xl cursor-pointer flex flex-col justify-center items-center relative w-full;
+
+        &:hover {
+            >.our_products-buyNow-Button {
+                visibility: visible;
+                transform: translateY(-10px);
+                transition: all 2s ease-in-out;
+            }
+
+            >.our_products-name {
+                @apply opacity-50;
+                transition: all 2s ease-in;
+            }
+        }
+    }
+
+    &_list {
+        @apply h-60 overflow-hidden;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: all 0.8s ease-in-out;
+        }
+    }
+
+
+    &-name {
+        @apply absolute bottom-1/2 w-full h-10 text-black overflow-hidden rounded-sm border-0 bg-white text-xl text-center font-semibold opacity-0;
+
+    }
+
+    &-buyNow-Button {
+        @apply absolute bottom-0 w-4/5 h-10 text-white overflow-hidden rounded-md border-2 bg-gray-500 text-2xl font-semibold;
+        transform: translateY(200px);
+        transition: all 0.8s ease-in-out;
+    }
+}
+
+.slider_products {
+    &-card {
+        @apply border-2 border-red-300 overflow-hidden rounded-xl cursor-pointer flex items-center flex-col relative w-full;
+        height: 400px;
+
+        &:hover {
+            >.slider_products-buyNow-Button {
+                visibility: visible;
+                transform: translateY(-10px);
+                transition: all 0.7s ease-in-out;
+            }
+
+            >.slider_products-main {
+                transform: scale(1.1);
+                transition: all 0.8s ease-in-out;
+            }
+        }
+    }
+
+    &-main {
+        @apply h-60 overflow-hidden mt-0;
+
+    }
+
+    &-name-price {
+        @apply absolute bottom-16 text-center w-full cursor-pointer text-gray-500 ;
+        z-index: 100; 
+        &:hover{
+            @apply text-black;
+        }
+    }
+
+    &-buyNow-Button {
+        @apply absolute bottom-0 w-4/5 h-10 text-white overflow-hidden rounded-md border-2 bg-gray-500 text-2xl font-semibold;
+        transform: translateY(200px);
+        transition: all 0.8s ease-in-out;
+
+        &:hover {
+            @apply bg-blue-600 text-white;
+        }
+    }
+}
+
+// ######################## Video styling #####################
+
+.iframe-container {
+    @apply relative w-full;
+    padding-bottom: 56.25%;
+}
+
+.iframe-container iframe {
+    @apply absolute w-4/5;
+    left: 10%;
+    height: 70%;
+}
+.homepage-features{
+    padding: 50px 0px;
+}

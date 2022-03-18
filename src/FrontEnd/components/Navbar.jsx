@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from '../img/logo.png';
 import * as fi from 'react-icons/fi';
 import * as bi from 'react-icons/bi';
@@ -13,16 +13,17 @@ export default function Navbar() {
         {
             title: "Shop", url: "/shop",
             submenu: [
-                { title: "cloth", url: "/cloth" },
-                { title: "cloth", url: "/cloth" },
-                { title: "cloth", url: "/cloth" },
-                { title: "cloth", url: "/cloth" }
+                { title: "Beep/Veal", url: "/cloth" },
+                { title: "Goat/Lamb", url: "/cloth" },
+                { title: "Chiken", url: "/cloth" }, 
             ]
         },
         { title: "About", url: "/about" },
         { title: "Contact", url: "/contact" },
         { title: "Blog", url: "/blog" },
     ];
+    const [dropdown, setDrowpdown] = useState(false);
+    const HanldeDropdown = (data) => setDrowpdown(data);
     return (
         <>
             <div style={{ height: "50px", backgroundColor: "white" }}></div>
@@ -78,22 +79,26 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    <div className='w-full bg-green-900'>
-                        <div className='container h-16'>
+                    <div onMouseLeave={() => HanldeDropdown(false)} className='w-full bg-green-900'>
+                        <div className='container'>
                             <ul className='flex items-center flex-row'>
-                                {NavItem.map((el,index) => {
+                                {NavItem.map((el, index) => {
                                     return (
                                         <>
-                                            <li key={index} onMouseEnter={HanldeDropdown(index)} className='Menulist'><span>{el.title}</span><span>{el.submenu && <fa.FaAngleDown size={"1.2rem"} />}</span></li>
-                                            {el.submenu && <div className='text-white'>
-                                                {el.submenu.map((submenuItems, index) => {
-                                                    return (
-                                                        <li>{submenuItems.title}</li>
-                                                    )
-                                                })}
-
-                                            </div>}  
-                                            </>
+                                            <li key={index} onMouseEnter={() => HanldeDropdown(index)} className='menulist'>
+                                                <NavLink to={el.url} className={({ isActive }) =>isActive ? "active" : "" }>{el.title}</NavLink>
+                                                <span>{el.submenu && <fa.FaAngleDown size={"1.2rem"} />}</span>
+                                                {(dropdown===index && el.submenu) && <div className='menulist-submenu'>
+                                                    <ul className='menulist-submenu-area'>
+                                                    {el.submenu.map((submenuItems, index) => {
+                                                        return (
+                                                            <li className=' p-2 text-gray-500'><Link to={submenuItems.url} className="text-gray-600 hover:text-black">{submenuItems.title}</Link></li>
+                                                        )
+                                                    })}
+                                                   </ul>
+                                                </div>}
+                                            </li>
+                                        </>
                                     )
                                 })
 
