@@ -8,12 +8,11 @@ import Image from '../../img/Image';
 const SliderContent = () => {
     return (
         <>
-            <div className='w-full h-full flex flex-col items-center justify-center aninationZoomIn text-white opacity-100'>
+            <div className='w-full z-50 h-full flex flex-col items-center justify-center aninationZoomIn text-white'>
                 <div className="text-9xl slider-content-header font-thin tracking-widest">Gta Halal Meat</div>
                 <div className="text-4xl slider-content-header tracking-normal mt-4">comming soon</div>
                 <button className="text-2xl slider-content-header bg-green-900 rounded-full cursor-pointer">
-                    <div className="p-3 cursor-pointer">shop now</div>
-                     
+                    <div className="p-3 cursor-pointer">shop now</div> 
                 </button>
             </div>
         </>
@@ -52,7 +51,7 @@ const HomepageSlider = () => {
                     initialSlide={1}
                     style={{
                         color: '#FFF',
-                        opacity: "0.5",
+                        opacity: "1",
                         
                     }}
                     settings={{
@@ -86,7 +85,7 @@ const HomepageSlider = () => {
                                     backgroundImage: el,
                                     backgroundAnimation: 'zoom'
                                 }}
-                                children={SliderContent()}
+                                children={SliderContent()} 
                             />
                         )
                     })}

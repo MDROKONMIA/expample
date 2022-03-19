@@ -1,6 +1,7 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { CardImageWithPrice } from '../../components/CardImageWithPrice';
 export default function CaroselSlider(props) {
 
     const { sliderItems } = props;
@@ -33,19 +34,18 @@ export default function CaroselSlider(props) {
             {sliderItems.map((el, index) => {
                 return (
                     <div className='pl-2 pr-2'>
-                        <div className='slider_products-card'>
-                            <div className='slider_products-main'>
-                                <img src={el.img} className="bg-cover object-contain h-full w-full" />
-                            </div> 
-                                <div className='slider_products-name-price'>
-                                    <div className='slider_products-name'>Beaf/Cow</div>
-                                    <div className='slider_products-price'>100tk</div>
-                                </div>
-                             
-                            <button className='slider_products-buyNow-Button'>Boy now</button>
-                        </div>
+                    <div className='slider_products-card'>
+                        <div className='slider_products-main'>
+                            <img src={el.img} className="bg-cover object-contain h-full w-full" alt='' />
+                        </div> 
+                            <div className='slider_products-name-price'>
+                                <div className='slider_products-name'>Beap/Veal</div>
+                                <div className='slider_products-price'>1000tk/Lb</div>
+                            </div>
+                         
+                        <button className='slider_products-buyNow-Button'>Boy now</button>
                     </div>
-
+                </div>
                 )
             })}
         </Carousel>

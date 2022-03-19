@@ -1,27 +1,29 @@
 import React, { useState } from 'react'
-import logo from '../img/logo.png';
-import * as fi from 'react-icons/fi';
+import logo from '../img/logo.png'; 
 import * as bi from 'react-icons/bi';
 import * as fa from 'react-icons/fa';
 import * as bs from 'react-icons/bs';
 import { Link, NavLink } from 'react-router-dom';
+import ImageBeaf from '../img/meat-1.jpg';
+import ImageGoat from '../img/meat-2.jpg';
+import ImageChiken from '../img/meat-3.jpg';
 
-
+export const NavItem = [
+    { title: "Home", url: "/home" },
+    {
+        title: "Shop", url: "/shop",
+        submenu: [
+            { title: "Beep/Veal", url: "/category/beap-veal", img:ImageBeaf },
+            { title: "Goat/Lamb", url: "/category/goat-lamb", img:ImageChiken },
+            { title: "Chiken", url: "/category/Chiken", img:ImageGoat }, 
+        ]
+    },
+    { title: "About", url: "/about" },
+    { title: "Contact", url: "/contact" },
+    { title: "Blog", url: "/blog" },
+];
 export default function Navbar() {
-    const NavItem = [
-        { title: "Home", url: "/home" },
-        {
-            title: "Shop", url: "/shop",
-            submenu: [
-                { title: "Beep/Veal", url: "/cloth" },
-                { title: "Goat/Lamb", url: "/cloth" },
-                { title: "Chiken", url: "/cloth" }, 
-            ]
-        },
-        { title: "About", url: "/about" },
-        { title: "Contact", url: "/contact" },
-        { title: "Blog", url: "/blog" },
-    ];
+    
     const [dropdown, setDrowpdown] = useState(false);
     const HanldeDropdown = (data) => setDrowpdown(data);
     return (
@@ -55,7 +57,7 @@ export default function Navbar() {
                                     {/* End of Header contact  */}
 
                                     {/* Advanced search bar  */}
-                                    <div className="header-advance-search">
+                                    <div className="header-advance-search w-1/2">
                                         <form action="https://www.gtahalalmeat.com/search" method="get" className='flex items-center justify-center'>
                                             <input value="" type="text" name="search" placeholder="Search your product" className='header-advance-search-input' />
                                             <button className='search-button'>
@@ -79,7 +81,7 @@ export default function Navbar() {
                         </div>
                     </div>
 
-                    <div onMouseLeave={() => HanldeDropdown(false)} className='w-full bg-green-900'>
+                    <div onMouseLeave={() => HanldeDropdown(false)} className='w-full bg-green-lighter'>
                         <div className='container'>
                             <ul className='flex items-center flex-row'>
                                 {NavItem.map((el, index) => {

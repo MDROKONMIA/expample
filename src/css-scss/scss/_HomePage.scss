@@ -93,7 +93,7 @@
 .slider_products {
     &-card {
         @apply border-2 border-red-300 overflow-hidden rounded-xl cursor-pointer flex items-center flex-col relative w-full;
-        height: 400px;
+        height: 400px; 
 
         &:hover {
             >.slider_products-buyNow-Button {
