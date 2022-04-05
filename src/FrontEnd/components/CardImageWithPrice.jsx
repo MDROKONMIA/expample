@@ -3,7 +3,7 @@ import React from 'react'
 export const CardImageWithPrice = ({ img, price, name }) => {
   return (
     <div className='pl-2 pr-2'>
-    <div className='slider_products-card'>
+    <div className='slider_products-card bg-white'>
         <div className='slider_products-main'>
             <img src={img} className="bg-cover object-contain h-full w-full" alt='' />
         </div> 

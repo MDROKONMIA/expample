@@ -18,9 +18,30 @@ a {
   @apply text-3xl font-bold tracking-wide;
 }
 
+.hover-with-shadow, .form .form-row .button-with-social:hover {
+  box-shadow: rgba(4, 17, 29, 0.25) 0px 0px 8px 0px;
+  transition: all 0.1s ease 0s;
+  @apply border-white;
+}
+
+.button {
+  @apply inline-flex flex-row items-center justify-center text-base bg-green-lighter text-white font-semibold w-full rounded-full;
+  border-radius: 10px;
+  padding: 12px 20px;
+  border: 1px solid rgb(32, 129, 226);
+}
+.button:hover {
+  @apply bg-green-800;
+}
+
 .logo {
   @apply absolute top-1/2;
   transform: translateY(-70%);
+}
+@media (max-width: 767px) {
+  .logo {
+    @apply relative;
+  }
 }
 
 .header-bottom {
@@ -32,6 +53,12 @@ a {
   height: 80px;
 }
 
+.header-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -2px;
+  z-index: 999;
+}
 .header-advance-search {
   @apply bg-white relative;
   -ms-flex-preferred-size: 50%;
@@ -85,11 +112,22 @@ a {
   margin-top: 0;
   z-index: 999;
 }
-.menulist > a {
+.menulist-navlink {
   color: white;
   text-decoration: none;
 }
-.menulist > a:hover {
+.menulist-navlink-forMobile {
+  @apply p-1 text-gray-800 text-lg w-full;
+}
+.menulist-navlink-forMobile:hover {
+  color: black;
+  padding-left: 25px;
+  transition: all 0.4s;
+}
+.menulist-navlink-sticky {
+  @apply text-black;
+}
+.menulist-navlink:hover, .menulist-navlink-sticky:hover {
   @apply text-green-400;
   text-decoration: none;
 }
@@ -106,7 +144,7 @@ a {
   transform-origin: center top 0;
 }
 .menulist-submenu-area {
-  @apply pl-4 pt-0 pb-4 pr-4 text-black  justify-center items-center;
+  @apply pl-4 pt-0 pb-4 pr-4 text-black justify-center items-center;
 }
 
 .active {
@@ -215,7 +253,7 @@ a {
 
 .slider_products-card {
   @apply border-2 border-red-300 overflow-hidden rounded-xl cursor-pointer flex items-center flex-col relative w-full;
-  height: 400px;
+  height: 300px;
 }
 .slider_products-card:hover > .slider_products-buyNow-Button {
   visibility: visible;
@@ -227,10 +265,10 @@ a {
   transition: all 0.8s ease-in-out;
 }
 .slider_products-main {
-  @apply h-60 overflow-hidden mt-0;
+  @apply h-52 overflow-hidden mt-0;
 }
 .slider_products-name-price {
-  @apply absolute bottom-16 text-center w-full cursor-pointer text-gray-500;
+  @apply absolute bottom-14 text-center w-full cursor-pointer text-gray-500;
   z-index: 100;
 }
 .slider_products-name-price:hover {
@@ -258,4 +296,40 @@ a {
 
 .homepage-features {
   padding: 50px 0px;
+}
+
+.registration-form {
+  @apply w-full;
+}
+
+.login-form {
+  max-width: 550px;
+}
+
+.form {
+  @apply text-center border-2 m-auto rounded-xl mb-50px pb-50px;
+}
+.form .form-row {
+  @apply flex flex-col w-full rounded-md pt-1 pb-1 pl-4 pr-4 justify-center;
+}
+.form .form-row .input--bar {
+  @apply cursor-text flex bg-white rounded-xl;
+  border: 1px solid black;
+  width: 100%;
+  padding: 12px;
+}
+.form .form-row .input--bar .texarea_Form {
+  @apply w-full;
+}
+.form .form-row .input--bar .texarea_Form:focus {
+  @apply outline-none;
+}
+.form .form-row .nameOfField {
+  text-align: start;
+  @apply text-gray-800 text-base font-bold relative items-center mr-4 justify-start mb-1;
+}
+.form .form-row .button-with-social {
+  @apply inline-flex flex-row items-center rounded-tl-full rounded-br-full justify-center text-base font-semibold w-full fill-white;
+  padding: 12px 24px;
+  color: white;
 }/*# sourceMappingURL=main.css.map */

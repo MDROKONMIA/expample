@@ -23,8 +23,8 @@ export const ShowProductsByCategory = (props) => {
     }
 
     return (
-        <section className='container-fluid'>
-            <div className='container md:'>
+        <section className='container-fluid bg-gray-200'>
+            <div className='container pt-50px pb-50px md:'>
                 <h2 className="headers w-full text-center">{ProductsData.title}</h2>
                 <div className='row justify-center mt-4'>
                     {Products}

@@ -28,7 +28,7 @@ export default function FooterSocialPart() {
 
                             {/* <!--=======  contact segments  =======--> */}
 
-                            <div className="contact-segments d-flex justify-content-between flex-wrap flex-lg-nowrap">
+                            <div className="d-flex justify-content-between flex-wrap flex-lg-nowrap">
                                 {/* <!--=======  single contact  =======--> */}
 
 

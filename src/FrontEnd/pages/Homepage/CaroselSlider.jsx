@@ -1,7 +1,6 @@
 import React from 'react';
 import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
-import { CardImageWithPrice } from '../../components/CardImageWithPrice';
+import 'react-multi-carousel/lib/styles.css'; 
 export default function CaroselSlider(props) {
 
     const { sliderItems } = props;

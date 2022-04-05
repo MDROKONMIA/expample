@@ -11,3 +11,17 @@ a{
 .headers{
     @apply text-3xl font-bold tracking-wide;
 }
+.hover-with-shadow{
+    box-shadow: rgb(4 17 29 / 25%) 0px 0px 8px 0px;
+    transition: all 0.1s ease 0s;
+    @apply border-white;
+}
+.button {
+    @apply inline-flex flex-row items-center justify-center text-base bg-green-lighter text-white font-semibold w-full rounded-full; 
+    border-radius: 10px; 
+    padding: 12px 20px; 
+    border: 1px solid rgb(32, 129, 226); 
+    &:hover{
+        @apply bg-green-800;
+    }
+}

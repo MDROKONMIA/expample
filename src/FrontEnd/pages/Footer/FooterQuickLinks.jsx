@@ -1,11 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { NavItem } from '../../components/Navbar';
+import { scrollTOP_click_link } from '../../components/scrollTOP_click_link';
 
-const Pages = [{ title: 'Home', url: "/" }, { title: 'Beaf/Veal', url: "/Beaf" }, { title: 'Goat/Lamb', url: "/Goat" }, { title: 'Chiken', url: "/Chiken" },];
+const Pages = [{ title: 'Home', url: "/" },];
+NavItem[1].submenu.map((el)=>Pages.push(el));  
 
-const TermsPolicy = [{ title: 'Privacy policy', url: "/privacy-policy" }, { title: 'Terms and condition', url: "/terms-conditon" }, { title: "Faq's", url: "/faqs" }, { title: 'Refund policy', url: "/refund-policy" },];
+const TermsPolicy = [{ title: 'Privacy policy', url: "/privacy-policy" }, { title: 'Terms and condition', url: "/terms-condition" }, { title: "Faq's", url: "/faqs" }, { title: 'Refund policy', url: "/refund-policy" },];
 
-const MyAccount = [{ title: 'MyAccount', url: "/my-account" }, { title: 'Shopping Cart', url: "/shooping-cart" }];
+const MyAccount = [{ title: 'MyAccount', url: "/login" }, { title: 'Shopping Cart', url: "/shooping-cart" }];
 
 const GtaHalalInfo = [{ title: 'View vendor hala certification', url: "/vendor-cirtification" }, { title: 'About us', url: "/about-us" }];
 
@@ -27,7 +30,7 @@ export default function FooterQuickLinks() {
                                             return (
                                                 <>
                                                     <li className="mt-2 font-bold" key={subindex}>
-                                                        <Link to={item.url} className='text-gray-500 text-uppercase text-xs hover:text-black'>{item.title}</Link>
+                                                        <Link to={item.url} onClick={scrollTOP_click_link} className='text-gray-500 text-uppercase text-xs hover:text-black'>{item.title}</Link>
                                                     </li>
                                                 </>
                                             )

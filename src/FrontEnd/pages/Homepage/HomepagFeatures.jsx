@@ -9,14 +9,14 @@ import CaroselSlider from './CaroselSlider';
 const HomepageFeatures = () => {
     const FeaturesDetails = [
         {
-            img: fimg_1,
-            headLine: "100% HALAL",
-            descrription: "All Halal Meats are Hand Slaughtered and we only work with HMA Certified vendors and suppliers in Canada"
-        },
-        {
             img: fimg_2,
             headLine: "Quality Promise",
             descrription: "Here at GTA Halal Meat, we promise to always delivery high quality products to your door and never compromise on this commitment."
+        },
+        {
+            img: fimg_1,
+            headLine: "100% HALAL",
+            descrription: "All Halal Meats are Hand Slaughtered and we only work with HMA Certified vendors and suppliers in Canada"
         },
         {
             img: fimg_3,
@@ -38,9 +38,9 @@ const HomepageFeatures = () => {
                         {FeaturesDetails.map((el, index) => {
                             return (
                                 <div className='col-sm-6 col-md-5 col-lg-3 text-center mt-2'>
-                                    <div className='bg-white w-full p-4 text-center flex flex-col items-center rounded-xl'>
+                                    <div className='bg-white w-full h-80 max-h-80 p-4 text-center flex flex-col items-center rounded-xl'>
                                         <div className='h-24 w-full max-h-24 max-w-full flex justify-center items-center'>
-                                            <img src={el.img} className="rounded-full w-full h-full" />
+                                            <img src={el.img} className="rounded-full w-full h-full" alt="" />
                                         </div>
                                         <h className=' text-black mt-4 mb-3 text-xl font-extrabold'>{el.headLine}</h>
                                         <p className='text-sm text-gray-500 font-semibold'>{el.descrription}</p>

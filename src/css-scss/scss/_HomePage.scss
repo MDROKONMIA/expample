@@ -93,7 +93,7 @@
 .slider_products {
     &-card {
         @apply border-2 border-red-300 overflow-hidden rounded-xl cursor-pointer flex items-center flex-col relative w-full;
-        height: 400px; 
+        height: 300px; 
 
         &:hover {
             >.slider_products-buyNow-Button {
@@ -110,12 +110,12 @@
     }
 
     &-main {
-        @apply h-60 overflow-hidden mt-0;
+        @apply h-52 overflow-hidden mt-0;
 
     }
 
     &-name-price {
-        @apply absolute bottom-16 text-center w-full cursor-pointer text-gray-500 ;
+        @apply absolute bottom-14 text-center w-full cursor-pointer text-gray-500 ;
         z-index: 100; 
         &:hover{
             @apply text-black;
