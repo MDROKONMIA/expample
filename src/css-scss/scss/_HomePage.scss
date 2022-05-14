@@ -1,54 +1,19 @@
-@keyframes zoomin {
-    0% {
-        opacity: 0;
-    }
 
-    100% {
-        opacity: 1;
-        transform: translate3d(.3, .3, .3);
+.slider{
+    &-title{
+        animation: zoom-in  3s forwards; 
     }
 }
-
-@keyframes fadin {
-
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate3d(0, -100px, 0)
-    }
+@keyframes zoom-in{
+from{
+    opacity: 0;
+    font-size: 2rem;
 }
-
-.slider-content-header {
-    animation: fadin 1s;
-    animation-fill-mode: both;
-    @apply mb-3;
-    font-style: italic;
-
-    &:last-child {
-        @apply mb-0;
-    }
-
-    &>* {
-        animation-name: zoomin 1s;
-        animation-delay: 3s;
-        animation-fill-mode: both;
-    }
+to{
+    opacity: 1;
+    font-size: 3rem;
 }
-
-.animationZoomIn {
-    animation: zoomin 1s;
-    animation-fill-mode: both;
-
-    &>* {
-        animation: fadin 1s;
-        animation-fill-mode: both;
-        animation-delay: 3s;
-    }
 }
-
 .our_products {
 
     &_card {

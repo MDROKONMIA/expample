@@ -1,93 +1,55 @@
-import React, { useRef } from 'react';
-import HeroSlider, { Slide, Nav, SideNav, MenuNav, ButtonsNav, AutoplayButton, OverlayContent, OverlayContainer, } from 'hero-slider';
-import styled from 'styled-components';
-import * as im from 'react-icons/im';
+ 
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import Image from '../../img/Image';
-
-
-const SliderContent = () => {
-    return (
-        <>
-            <div className='w-full z-50 h-full flex flex-col items-center justify-center aninationZoomIn absolute bottom-0 text-white'>
-                <div className="text-9xl slider-content-header font-thin tracking-widest">Gta Halal Meat</div>
-                <div className="text-4xl slider-content-header tracking-normal mt-4">comming soon</div>
-                <button className="text-2xl slider-content-header bg-green-900 rounded-full cursor-pointer">
-                    <div className="p-3 cursor-pointer">shop now</div>
-                </button>
-            </div>
-        </>
-    )
-}
+// Import Swiper styles
+import 'swiper/css';
+import "swiper/css/effect-fade";
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { A11y, Autoplay, EffectCards, EffectCoverflow, EffectFade, Navigation, Pagination, Parallax } from 'swiper';
 
 const HomepageSlider = () => {
-    const SliderImage = new Image(1).HomePageSliderImage();
-    const StyledOverlayContainer = styled(OverlayContainer)`
-  &&& {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    margin: 0 auto;
-    background-color: rgba(0, 0, 0, 0.33);
-    text-align: center;
-    H2, H3 {
-      margin: 0 36px;
+    const Content = () => {
+        return (<div className='absolute flex flex-col top-1/2 justify-center w-full opacity-100'>
+            <div className="title m-auto text-2xl tracking-tight text-white slider-title" >
+                GTA HALAL MEAT
+            </div>
+            <div className="subtitle m-auto text-xl text-white slider-subtitle"  >
+                cOMMING SOON
+            </div>
+            <div className="subtitle m-auto text-xl text-white slider-body" >
+                Buy Now
+            </div>
+        </div>)
     }
-  }
-`;
-    const nextSlideHandler = useRef();
-    const previousSlideHandler = useRef();
+    const SliderImage = new Image(1).HomePageSliderImage();
     return (
-        <>
-            {/* homepage big  Image slider */}
-            <section className='-mt-4 overflow-visible relative'>
-                <HeroSlider
-                    nextSlide={nextSlideHandler}
-                    previousSlide={previousSlideHandler}
-                    orientation="horizontal"
-                    slidingAnimation="fade"
-                    initialSlide={1}
-                    style={{
-                        color: '#FFF',
-                        opacity: "1",
+        <div className='w-full -mt-4'>
+            <Swiper
+                modules={[Navigation, Pagination, EffectFade, A11y, Autoplay, Parallax]}
+                effect={"fade"}
+                spaceBetween={50}
+                slidesPerView={1}
+                navigation
+                parallax={true}
+                pagination={{ clickable: true }}
+                autoplay={{
+                    delay: 5000,
+                    disableOnInteraction: true,
+                }}
+            >
+                {SliderImage.map((el, index) => {
+                    return (
+                        <SwiperSlide className='SwiperSlider' style={{ backgroundPosition: "center", backgroundSize: 'cover', height: "500px", overflow: 'hidden' }} key={index}>
+                            {Content()}
+                            <img src={el} style={{ width: '100%' }} alt="" />
+                        </SwiperSlide>
+                    )
+                })}
 
-                    }}
-                    settings={{
-                        slidingDuration: 600,
-                        slidingDelay: 100,
-                        shouldAutoplay: true,
-                        shouldDisplayButtons: false,
-                        autoplayDuration: 5000,
-                        height: '100vmin',
-                    }}>
-
-                    <StyledOverlayContainer> 
-                        <div className='w-full absolute flex  top-1/2 text-while justify-between'>
-                            <button className='text-5xl focus:outline-none pl-2' onClick={() => previousSlideHandler.current()}  > <im.ImCircleLeft /></button>
-                            <button className='text-5xl focus:outline-none pr-2' onClick={() => nextSlideHandler.current()}  > <im.ImCircleRight /> </button>
-                        </div>
-                    </StyledOverlayContainer>
-
-                    {SliderImage.map((el, index) => {
-                        return (
-                            <> 
-                                <Slide key={index}
-                                    background={{
-                                        backgroundImage: el,
-                                        backgroundAnimation: 'zoom'
-                                    }}
-                                    children={<SliderContent/>}
-                                />
-                            </>
-                        )
-                    })}
-
-                </HeroSlider>
-            </section>
-            {/* End of homepage big  Image slider */}
-        </>
-    )
-}
+            </Swiper>
+        </div>
+    );
+};
 export default HomepageSlider;

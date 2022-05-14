@@ -12,6 +12,7 @@ import { PrivacyPolicy } from './FrontEnd/pages/PrivacyPolicy';
 import SimpleBreadcrumbs from './FrontEnd/components/SimpleBreadcrumbs';
 import { TermsConditions } from './FrontEnd/pages/TermsConditions';
 import { Faqs } from './FrontEnd/pages/Faqs';
+import { ShopPage } from './FrontEnd/pages/ShopPage';
 
 
 function App() {
@@ -19,19 +20,20 @@ function App() {
     <div className='font-halal'>
       <Navbar />
       <div className="bg-gray-200">
-      <SimpleBreadcrumbs crumbs={NavItem} />
-      <Routes>
-        <Route path='/' element={<Homepage />} />
-        <Route path='/home' element={<Homepage />} />
-        <Route path='/category/:slug' element={<ShowProductsByCategory />} />
-        <Route path='/login' element={<LoginForm />} />
-        <Route path='/registration' element={<RegistrationForm />} />
-        <Route path='/contact' element={<ContactPage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-condition" element={<TermsConditions />} />
-        <Route path="/faqs" element={<Faqs />} />
+        <SimpleBreadcrumbs crumbs={NavItem} />
+        <Routes>
+          <Route path='/' element={<Homepage />} />
+          <Route path='/home' element={<Homepage />} />
+          <Route path='/category/:slug' element={<ShowProductsByCategory />} />
+          <Route path='/login' element={<LoginForm />} />
+          <Route path='/registration' element={<RegistrationForm />} />
+          <Route path='/contact' element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-condition" element={<TermsConditions />} />
+          <Route path="/faqs" element={<Faqs />} />
+          <Route path ="/shop" element={<ShopPage/>}/>
         </Routes>
-        </div>
+      </div>
       <Footer />
       <ScrollToTop />
     </div>
